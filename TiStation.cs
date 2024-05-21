@@ -1,21 +1,21 @@
 using System;
-using System.Collections.Generic;// мы юзаем отдельные каталоги комп функционала 
-using System.Linq;// мы юзаем отдельные каталоги комп функционала 
+using System.Collections.Generic;
+using System.Linq;
 
 namespace STO
 {
     public class TiStation
     {
-        private List<car> cars; // заприваченная штука только в локальном месте кода
+        private List<car> cars; 
         private List<Motorcycle> Motorcycles;
 
         public TiStation()
         {
-            cars = new List<car>();// экземпляр класса , пример бабочки на основе ее шаблона 
+            cars = new List<car>();
             Motorcycles = new List<Motorcycle>();
         }
 
-        public void Addcar(car a) // создаем метод . метод - функция . должна что-то делать. void признак того, что не вернет значение
+        public void Addcar(car a) 
         {
             cars.Add(a);
         }
@@ -31,7 +31,7 @@ namespace STO
                 .Concat(Motorcycles)
                 .OrderBy(ts => ((dynamic)ts).TiData)
                 .ToList();
-            return schedule; // так как нет воид то возвращает 
+            return schedule;  
         }
     }
 }
