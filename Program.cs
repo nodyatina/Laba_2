@@ -5,7 +5,7 @@ class Program
 {
     static void Main() 
     {
-        var tiStation = new TiStation(); // создается экземпляр класса 
+        var tiStation = new TiStation(); 
 
         tiStation.Addcar(new car("A111AA", DateTime.Now.AddDays(3), "Автомат")); 
         tiStation.Addcar(new car("B222BB", DateTime.Now.AddDays(1), "Механика"));
