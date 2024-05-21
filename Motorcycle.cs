@@ -6,9 +6,9 @@ namespace STO
     {
         public string GovNumber { get; set; }
         public DateTime TiData { get; set; }
-        public string MotoType { get; set; } // motocycle type
+        public string MotoType { get; set; } 
 
-        public Motorcycle(string govNumber, DateTime tiData, string motoType) // форма записи более удобная 
+        public Motorcycle(string govNumber, DateTime tiData, string motoType) 
         {
             GovNumber = govNumber;
             TiData = tiData;
