@@ -1,19 +1,17 @@
-using System;// файл юзает память компа
+using System;
 
-namespace STO // нэймспейс рабочее пространство
+namespace STO 
 {
-    public class car // класс это шаблон который задает стандарт 
-        // паблик это тэг для строки который обозначает что она доступна в любой части кода , вне зависимости от класса
-        // маркер безопасности , общедоступности 
-        // класс может содержать методы , поля и свойства , МЕТОДЫ - функция , а ПОЛЯ - свойства
+    public class car 
+        
     {
-        public string GovNumber { get; set; } // гос номер , свойство 
-        public DateTime TiData { get; set; } // Technical inspection , свойство ( зеленая это значит функция системы) 
-        public string TransmissionType { get; set; } // тип коробки передач , свойство
+        public string GovNumber { get; set; } 
+        public DateTime TiData { get; set; } 
+        public string TransmissionType { get; set; } 
 
-        public car(string govNumber, DateTime tiData, string transmissionType) // тоже свойство 
+        public car(string govNumber, DateTime tiData, string transmissionType) 
         {
-            GovNumber = govNumber;// присуждение свойствам значения 
+            GovNumber = govNumber;
             TiData = tiData;
             TransmissionType = transmissionType;
         }
