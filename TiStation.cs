@@ -6,32 +6,46 @@ namespace STO
 {
     public class TiStation
     {
-        private List<car> cars; 
-        private List<Motorcycle> Motorcycles;
+        private List<Car> cars;
+        private List<Motorcycle> motorcycles;
 
         public TiStation()
         {
-            cars = new List<car>();
-            Motorcycles = new List<Motorcycle>();
+            cars = new List<Car>();
+            motorcycles = new List<Motorcycle>();
         }
 
-        public void Addcar(car a) 
+        public void AddCar(Car car)
         {
-            cars.Add(a);
+            if (car != null)
+            {
+                cars.Add(car);
+            }
+            else
+            {
+                throw new ArgumentNullException("car", "Cannot add a null car to the station.");
+            }
         }
 
-        public void AddMotorcycle(Motorcycle m)
+        public void AddMotorcycle(Motorcycle motorcycle)
         {
-            Motorcycles.Add(m);
+            if (motorcycle != null)
+            {
+                motorcycles.Add(motorcycle);
+            }
+            else
+            {
+                throw new ArgumentNullException("motorcycle", "Cannot add a null motorcycle to the station.");
+            }
         }
 
-        public IEnumerable<object> scheduleе()
+        public IEnumerable<Vehicle> Schedule()
         {
-            var schedule = cars.Cast<object>()
-                .Concat(Motorcycles)
-                .OrderBy(ts => ((dynamic)ts).TiData)
-                .ToList();
-            return schedule;  
+            List<Vehicle> schedule = new List<Vehicle>();
+            schedule.AddRange(cars);
+            schedule.AddRange(motorcycles);
+            schedule.Sort((x, y) => x.TiData.CompareTo(y.TiData));
+            return schedule;
         }
     }
 }
