@@ -8,10 +8,8 @@ namespace STO
 
         public Motorcycle(string govNumber, DateTime tiData, string motoType)
         {
-            if (string.IsNullOrEmpty(govNumber)) throw new ArgumentNullException( "GovNumber cannot be null or empty.");
-
-            GovNumber = govNumber;
-            TiData = tiData;
-            MotoType = motoType;
+            GovNumber = govNumber ?? throw new ArgumentNullException( "cannot be null");;
+            TiData = tiData ?? throw new ArgumentNullException( "cannot be null");;
+            MotoType = motoType ?? throw new ArgumentNullException( "cannot be null");;
         }
     }
