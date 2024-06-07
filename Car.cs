@@ -8,9 +8,8 @@ namespace STO
 
         public Car(string govNumber, DateTime tiData, string transmissionType)
         {            
-             if (string.IsNullOrEmpty(govNumber)) throw new ArgumentNullException("GovNumber cannot be null or empty.");
-            GovNumber = govNumber;
-            TiData = tiData;
-            TransmissionType = transmissionType;
+            GovNumber = govNumber ?? throw new ArgumentNullException("cannot be null");
+            TiData = tiData ?? throw new ArgumentNullException("cannot be null");;
+            TransmissionType = transmissionType ?? throw new ArgumentNullException("cannot be null");;
         }
     }
