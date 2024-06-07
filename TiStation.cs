@@ -10,11 +10,22 @@ namespace STO
 
         public void AddCar(Car car)
         {
+             if (car == null)
+             {
+                 throw new NullReferenceException("NO");
+             }
+
             vehicles.Add(car);
         }
 
         public void AddMotorcycle(Motorcycle motorcycle)
+            
         {
+            if (motorcycle == null)
+             {
+                 throw new NullReferenceException("NO");
+             }
+
             vehicles.Add(motorcycle);
         }
 
