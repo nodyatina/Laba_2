@@ -15,7 +15,7 @@ class Program
 
         foreach (var vehicle in tiStation.Schedule())
         {
-            Console.WriteLine(vehicle.GovNumber + " - " + vehicle.TiData.ToString("dd.MM.yyyy")); 
+            Console.WriteLine($"vehicle.GovNumber  -  vehicle.TiData.ToString("dd.MM.yyyy")"); 
         }
         Console.ReadKey();
     }
