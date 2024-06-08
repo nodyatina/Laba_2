@@ -4,34 +4,25 @@ using System.Linq;
 
 namespace STO
 {
-    public class TiStation
+    
+        
+public class TiStation
+{
+    private List<Vehicle> vehicles = new List<Vehicle>();
+
+    public void AddVehicle(Vehicle vehicle)
     {
-        private List<Vehicle> vehicles = new List<Vehicle>();
-
-        public void AddCar(Car car)
+        if (vehicle == null)
         {
-             if (car == null)
-             {
-                 throw new NullReferenceException("NO");
-             }
-
-            vehicles.Add(car);
+            throw new NullReferenceException("Vehicle object is null.");
         }
 
-        public void AddMotorcycle(Motorcycle motorcycle)
-            
-        {
-            if (motorcycle == null)
-             {
-                 throw new NullReferenceException("NO");
-             }
-
-            vehicles.Add(motorcycle);
-        }
-
-        public List<Vehicle> Schedule()
-        {
-            return vehicles;
-        }
+        vehicles.Add(vehicle);
     }
+
+    public List<Vehicle> Schedule()
+    {
+        return vehicles;
+    }
+}
 }
